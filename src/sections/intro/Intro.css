@@ -1,0 +1,107 @@
+#intro {
+    width: 100vw;
+    height: 150vh;
+    background-color: black;
+}
+
+#padding {
+    width: 100vw;
+    height: 80vh;
+    z-index: -1;
+}
+
+#moon {
+    margin-right: 10%;
+    margin-top: 2em;
+    width: 536px;
+    height: 865px;
+    z-index: 1;
+    position: fixed;
+    top: 0em;
+    right: 0;
+    z-index: 0;
+    object-fit: cover;
+    object-position: 0% 0%;
+    border-radius: 30% 100% 100% 30%;
+    filter: brightness(70%) grayscale(50%);
+}
+
+@media only screen and (max-width: 1540px) {
+    #moon {
+        display: none;
+    }
+
+    #cloud-cover-1 {
+        width: 100vw;
+        height: 100vh;
+        filter: brightness(40%) contrast(150%) grayscale();
+        object-position: 50% 0% !important;
+        object-fit: cover;
+        border-radius: 0px !important;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+    }
+
+    #name-title {
+        position: absolute !important;
+        width: 100% !important;
+        left: 0 !important;
+        text-align: center;
+        top: 38% !important;
+    }
+}
+
+#down-icon {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    z-index: 0;
+    color: white;
+    border: white solid;
+    border-radius: 100%;
+    width: 3em;
+    transform: translate(-50%, -50%);
+    /* animation: swapIconColors 0.5s reverse; */
+    transition: background-color 0.25s, color 0.25s;
+}
+
+#down-icon > p {
+    height: 100%;
+    width: 100%;
+    transform: translate(35%, 0%);
+}
+
+#down-icon:hover {
+    background-color: white;
+    color: black;
+}
+
+#name-title {
+    color: white;
+    text-align: justify-left;
+    top: 22rem;
+    left: var(--mleft);
+    flex-shrink: 0;
+    position: fixed;
+}
+
+#cloud-cover-1 {
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(40%) contrast(150%) grayscale();
+    object-position: 0% 0%;
+    object-fit: cover;
+    border-radius: 100% 100% 50% 50%;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0));
+}
+
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 140vh;
+    object-fit: contain;
+}
+
+h1 {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
