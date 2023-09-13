@@ -24,7 +24,7 @@ class Contact extends React.Component {
             method: 'POST',
         });
 
-        if (response.status === 202) {
+        if (response.status === 204) {
             alert("Message sent successfully!");
         } else {
             alert("Message failed to send. Please reach out at taylor@coxintl.com");
