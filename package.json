@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "serve -s build -p 443",
     "start-dev": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts  build",
     "build-dev": "react-scripts --openssl-legacy-provider build",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@fullpage/react-fullpage": "^0.1.40",
     "@types/webpack-env": "^1.18.1",
-    "webpack": "^4.19.1"
+    "webpack": "^4.19.1",
+    "serve": "^14.2.1"
   }
 }
