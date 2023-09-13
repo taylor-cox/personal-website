@@ -12,9 +12,9 @@ class About extends React.Component {
             <div id="about-text-container">
                 <h1 id="about-title">About Me</h1>
                 <p id="about-text">
-                    Passionate full-stack developer experienced in Java, Javascript, PostgreSQL and Python. <br /> <br />
+                    Passionate junior full-stack developer experienced in Java, Javascript, PostgreSQL and Python. <br /> <br />
                     Always looking for new challenges and learning experiences. <br /> <br />
-                    Currently seeking a full-stack developer position.
+                    Currently seeking a junior full-stack developer or software engineering position.
                 </p>
 
                 <a href={resume} id="hire-me" target="_blank">My Resume</a>

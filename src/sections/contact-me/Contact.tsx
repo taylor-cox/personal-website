@@ -11,18 +11,17 @@ class Contact extends React.Component {
         let now = new Date();
         now.setHours(now.getHours() + 1);
         document.cookie = `email-sent='true'; expiry=${now.toUTCString()}`;
-        const response = await fetch('localhost:3000/message', {
+        let emailURL: string = "https://faas-nyc1-2ef2e6cc.doserverless.co/api/v1/web/fn-03558eb5-4e35-4f04-af3b-5e3eda41feca/personal-website/send-email"
+        let urlParameters = {
+            name: (document.querySelector('.form p:nth-child(1) input') as HTMLInputElement).value,
+            email: (document.querySelector('.form p:nth-child(2) input') as HTMLInputElement).value,
+            message: (document.querySelector('.form p:nth-child(3) input') as HTMLInputElement).value
+        };
+        emailURL += "?name=" + encodeURIComponent(urlParameters.name) + "&";
+        emailURL += "email=" + encodeURIComponent(urlParameters.email) + "&";
+        emailURL += "message=" + encodeURIComponent(urlParameters.message);
+        const response = await fetch(emailURL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: (document.querySelector('.form p:nth-child(1) input') as HTMLInputElement).value,
-                email: (document.querySelector('.form p:nth-child(2) input') as HTMLInputElement).value,
-                message: (document.querySelector('.form p:nth-child(3) input') as HTMLInputElement).value
-            }),
-            mode: "same-origin",
-            credentials: "same-origin"
         });
 
         if (response.status === 202) {
